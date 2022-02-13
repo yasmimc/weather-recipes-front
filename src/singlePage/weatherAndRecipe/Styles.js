@@ -17,6 +17,14 @@ export const HalfContainer = styled.div`
 
   h3 {
     height: 80px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      cursor: pointer;
+    }
   }
 `;
 

@@ -1,9 +1,14 @@
 import { HalfContainer } from "./Styles";
+import { GiPerspectiveDiceSixFacesRandom as Dices } from "react-icons/gi";
 
-export default function Recipe({ recipe }) {
+export default function Recipe({ recipe, getAnotherRecipe }) {
   return (
     <HalfContainer>
-      <h3>{recipe.label}</h3>
+      <h3>
+        <span>
+          {recipe.label} <Dices onClick={getAnotherRecipe} />
+        </span>
+      </h3>
       <img src={recipe.image} alt="recipeImg" />
       <h4>Ingredients:</h4>
       <ul>
