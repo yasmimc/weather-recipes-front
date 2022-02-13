@@ -8,6 +8,11 @@ export function SearchCity() {
   const [results, setResults] = useState(null);
 
   function searchCity(e) {
+    if (e.key === "Escape") {
+      e.target.value = "";
+      setResults(null);
+      return;
+    }
     const value = e.target.value;
     if (value.length > 2) {
       city
@@ -21,10 +26,10 @@ export function SearchCity() {
 
   return (
     <>
-      <Input label="Type your city here:" onChange={searchCity} />
+      <Input label="Type your city here:" onKeyUp={searchCity} />
       <ResultsContainer display={results?.length}>
         {results?.map((city) => (
-          <CityOption onClick={() => selectCity(city.coord)}>
+          <CityOption key={city.id} onClick={() => selectCity(city.coord)}>
             {city.name} - {city.sys.country}
           </CityOption>
         ))}
