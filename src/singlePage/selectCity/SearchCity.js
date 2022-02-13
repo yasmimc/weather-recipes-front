@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import SearchInput from "../../components/SearchInput";
+import SpinnerLoader from "../../components/SpinnerLoader";
 import GlobalContext from "../../contexts/GlobalContext";
 import useApi from "../../hooks/useApi";
 import SearchResults from "./SearchResult";
@@ -27,7 +28,9 @@ export function SearchCity() {
     }
   }
 
-  return !loadingRecipe ? (
+  return loadingRecipe ? (
+    <SpinnerLoader />
+  ) : (
     <>
       <SearchInput placeholder="Type your city here..." onKeyUp={searchCity} />
       <SearchResults
@@ -35,7 +38,5 @@ export function SearchCity() {
         setLoadingRecipe={setLoadingRecipe}
       />
     </>
-  ) : (
-    "Loading"
   );
 }

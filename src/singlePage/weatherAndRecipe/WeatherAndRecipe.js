@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useState } from "react/cjs/react.development";
+import SpinnerLoader from "../../components/SpinnerLoader";
 import GlobalContext from "../../contexts/GlobalContext";
 import useApi from "../../hooks/useApi";
 import Recipe from "./Recipe";
@@ -27,7 +28,11 @@ export default function WeatherAndRecipe() {
 
   return (
     <Container>
-      <Recipe recipe={recipe} getAnotherRecipe={getAnotherRecipe} />
+      {loadingAnotherRecipe ? (
+        <SpinnerLoader />
+      ) : (
+        <Recipe recipe={recipe} getAnotherRecipe={getAnotherRecipe} />
+      )}
       <Weather weather={weather} selectedCity={selectedCity} />
     </Container>
   );
