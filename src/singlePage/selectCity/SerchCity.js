@@ -33,7 +33,6 @@ export function SearchCity() {
         setRecipe(resp.data.recipe);
         setWeather(resp.data.weather);
         setSelectedCity(true);
-        console.log(resp.data);
       })
       .catch((error) => console.error(error))
       .finally(() => setLoadingRecipe(false));

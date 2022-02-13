@@ -13,4 +13,7 @@ export const HalfContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-wrap: anywhere;
+  a {
+    text-decoration: none;
+  }
 `;

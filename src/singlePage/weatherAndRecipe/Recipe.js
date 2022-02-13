@@ -12,7 +12,10 @@ export default function Recipe({ recipe }) {
         ))}
       </ul>
       <h4>
-        Preparation instructions on <a href={recipe.url}>{recipe.url}</a>
+        Preparation instructions on{" "}
+        <a href={recipe.url} target="_blank" rel="noreferrer">
+          {recipe.url}
+        </a>
       </h4>
     </HalfContainer>
   );
