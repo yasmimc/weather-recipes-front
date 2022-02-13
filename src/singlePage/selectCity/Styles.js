@@ -17,5 +17,6 @@ export const ResultsContainer = styled.div`
 `;
 
 export const CityOption = styled.p`
+  margin: 10px 0;
   cursor: pointer;
 `;

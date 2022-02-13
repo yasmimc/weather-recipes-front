@@ -13,14 +13,17 @@ export const HalfContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   overflow-wrap: anywhere;
+  height: 100%;
+
+  padding-bottom: 100px;
+  margin-top: 162px;
 
   h3 {
     height: 80px;
     max-width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 0;
 
     svg {
       cursor: pointer;

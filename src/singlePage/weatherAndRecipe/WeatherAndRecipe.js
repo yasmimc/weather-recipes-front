@@ -28,11 +28,11 @@ export default function WeatherAndRecipe() {
 
   return (
     <Container>
-      {loadingAnotherRecipe ? (
-        <SpinnerLoader />
-      ) : (
-        <Recipe recipe={recipe} getAnotherRecipe={getAnotherRecipe} />
-      )}
+      <Recipe
+        recipe={recipe}
+        getAnotherRecipe={getAnotherRecipe}
+        loadingAnotherRecipe={loadingAnotherRecipe}
+      />
       <Weather weather={weather} selectedCity={selectedCity} />
     </Container>
   );

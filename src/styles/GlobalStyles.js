@@ -25,7 +25,7 @@ export default createGlobalStyle`
     text-decoration: none;
     font-size: smaller;
     color: white;
-    
+
     :hover {
       color: ${palette.color3}
     }
