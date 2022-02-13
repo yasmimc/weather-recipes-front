@@ -7,14 +7,14 @@ export default function SearchResults({ results, setLoadingRecipe }) {
   const { recipe } = useApi();
   const { setSelectedCity, setRecipe, setWeather } = useContext(GlobalContext);
 
-  function selectCity(coord) {
+  function selectCity(city) {
     setLoadingRecipe(true);
     recipe
-      .getRecipeByWeather(coord)
+      .getRecipeByWeather(city.coord)
       .then((resp) => {
         setRecipe(resp.data.recipe);
         setWeather(resp.data.weather);
-        setSelectedCity(true);
+        setSelectedCity(city.name);
       })
       .catch((error) => console.error(error))
       .finally(() => setLoadingRecipe(false));
@@ -23,7 +23,7 @@ export default function SearchResults({ results, setLoadingRecipe }) {
   return (
     <ResultsContainer display={results?.length}>
       {results?.map((city) => (
-        <CityOption key={city.id} onClick={() => selectCity(city.coord)}>
+        <CityOption key={city.id} onClick={() => selectCity(city)}>
           {city.name} - {city.sys.country}
         </CityOption>
       ))}

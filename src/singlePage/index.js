@@ -3,12 +3,13 @@ import Container from "../components/Container";
 import GlobalContext from "../contexts/GlobalContext";
 import WeatherAndRecipe from "./weatherAndRecipe/WeatherAndRecipe";
 import SelectCity from "./selectCity/SelectCity";
+import Header from "../components/Header";
 
 export default function SinglePage() {
   const { selectedCity } = useContext(GlobalContext);
   return (
     <Container>
-      <h1>Weather Recipes</h1>
+      <Header />
       {!selectedCity ? <SelectCity /> : <WeatherAndRecipe />}
     </Container>
   );

@@ -1,4 +1,4 @@
-import { SearchCity } from "./SerchCity";
+import { SearchCity } from "./SearchCity";
 
 export default function SelectCity() {
   return (

@@ -28,7 +28,7 @@ export function SearchCity() {
 
   return !loadingRecipe ? (
     <>
-      <SearchInput label="Type your city here:" onKeyUp={searchCity} />
+      <SearchInput placeholder="Type your city here..." onKeyUp={searchCity} />
       <SearchResults results={results} setLoadingRecipe={setLoadingRecipe} />
     </>
   ) : (

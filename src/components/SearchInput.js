@@ -1,10 +1,14 @@
 import { DebounceInput } from "react-debounce-input";
 import styled from "styled-components";
 
-export default function Input({ label, value, onKeyUp, ...otherProps }) {
+export default function SearchInput({
+  placeholder,
+  value,
+  onKeyUp,
+  ...otherProps
+}) {
   return (
     <>
-      <label>{label}</label>
       <DebounceInput
         type="search"
         element={InputField}
@@ -12,6 +16,7 @@ export default function Input({ label, value, onKeyUp, ...otherProps }) {
         debounceTimeout={100}
         onChange={(e) => onKeyUp(e)}
         value={value}
+        placeholder={placeholder}
         {...otherProps}
       />
     </>
@@ -23,12 +28,17 @@ const InputField = styled.input`
   height: 40px;
   margin-top: 50px;
   font-size: 30px;
-  border-radius: 0 20px;
+  border-radius: 10px;
   border: solid 0;
-  padding: 15px;
+  padding: 25px 10px;
   z-index: 1;
 
   :focus {
     outline: 0;
+  }
+
+  ::placeholder {
+    font-style: italic;
+    font-size: smaller;
   }
 `;

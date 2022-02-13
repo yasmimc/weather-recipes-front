@@ -1,9 +1,11 @@
 import { HalfContainer } from "./Styles";
 
-export default function Weather({ weather }) {
+export default function Weather({ weather, selectedCity }) {
   return (
     <HalfContainer>
-      <h2>{weather.current.temp}ºC</h2>
+      <h3>
+        {selectedCity} ({weather.current.temp}ºC)
+      </h3>
     </HalfContainer>
   );
 }
