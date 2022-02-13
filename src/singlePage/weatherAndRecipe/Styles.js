@@ -13,4 +13,8 @@ export const HalfContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow-wrap: anywhere;
+
+  h3 {
+    height: 80px;
+  }
 `;
