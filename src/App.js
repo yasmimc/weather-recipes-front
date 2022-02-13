@@ -1,7 +1,12 @@
-import Home from "./pages/home/Home";
+import { GlobalProvider } from "./contexts/GlobalContext";
+import SinglePage from "./singlePage";
 
 function App() {
-  return <Home />;
+  return (
+    <GlobalProvider>
+      <SinglePage />
+    </GlobalProvider>
+  );
 }
 
 export default App;
