@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const ResultsContainer = styled.div`
-  height: 300px;
+  max-height: 300px;
   ${({ display }) =>
     display
       ? `
-  width: 400px;
   background-color: gray;
   width: 400px;
   font-size: 30px;
