@@ -1,5 +1,6 @@
 import { DebounceInput } from "react-debounce-input";
 import styled from "styled-components";
+import { palette } from "../styles/GlobalStyles";
 
 export default function SearchInput({
   placeholder,
@@ -29,7 +30,7 @@ const InputField = styled.input`
   margin-top: 50px;
   font-size: 30px;
   border-radius: 10px;
-  border: solid 0;
+  border: solid 2px ${palette.color3};
   padding: 25px 10px;
   z-index: 1;
 

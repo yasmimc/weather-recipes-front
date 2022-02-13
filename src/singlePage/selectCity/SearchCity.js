@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SearchInput from "../../components/SearchInput";
+import GlobalContext from "../../contexts/GlobalContext";
 import useApi from "../../hooks/useApi";
 import SearchResults from "./SearchResult";
 
 export function SearchCity() {
   const { city } = useApi();
-  const [results, setResults] = useState(null);
   const [loadingRecipe, setLoadingRecipe] = useState(false);
+  const { cityResults, setCityResults } = useContext(GlobalContext);
 
   function searchCity(e) {
     if (e.key === "Escape") {
       e.target.value = "";
     }
     if (e.target.value === "") {
-      setResults(null);
+      setCityResults(null);
       return;
     }
     const value = e.target.value;
@@ -21,7 +22,7 @@ export function SearchCity() {
     if (value.length > 2) {
       city
         .getCities(value)
-        .then((resp) => setResults(resp.data))
+        .then((resp) => setCityResults(resp.data))
         .catch((error) => console.error(error));
     }
   }
@@ -29,7 +30,10 @@ export function SearchCity() {
   return !loadingRecipe ? (
     <>
       <SearchInput placeholder="Type your city here..." onKeyUp={searchCity} />
-      <SearchResults results={results} setLoadingRecipe={setLoadingRecipe} />
+      <SearchResults
+        results={cityResults}
+        setLoadingRecipe={setLoadingRecipe}
+      />
     </>
   ) : (
     "Loading"

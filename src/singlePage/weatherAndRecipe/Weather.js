@@ -1,10 +1,10 @@
-import { HalfContainer } from "./Styles";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { HalfContainer, Map } from "./Styles";
+import { TileLayer, Marker } from "react-leaflet";
 import Leaflet from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
-import styled from "styled-components";
+import SearchCityAgain from "./SearchCityAgain";
 
 let DefaultIcon = Leaflet.icon({
   ...Leaflet.Icon.Default.prototype.options,
@@ -15,7 +15,6 @@ let DefaultIcon = Leaflet.icon({
 Leaflet.Marker.prototype.options.icon = DefaultIcon;
 
 export default function Weather({ weather, selectedCity }) {
-  console.log({ weather, selectedCity });
   const position = [weather.lat, weather.lon];
   return (
     <HalfContainer>
@@ -29,13 +28,7 @@ export default function Weather({ weather, selectedCity }) {
         />
         <Marker position={position}></Marker>
       </Map>
+      <SearchCityAgain />
     </HalfContainer>
   );
 }
-
-const Map = styled(MapContainer)`
-  width: 300px;
-  height: 300px;
-  border-radius: 25px;
-  z-index: 0;
-`;

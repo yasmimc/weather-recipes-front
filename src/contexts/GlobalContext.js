@@ -8,6 +8,7 @@ export function GlobalProvider({ children }) {
   const [selectedCity, setSelectedCity] = useState(false);
   const [weather, setWeather] = useState(null);
   const [recipe, setRecipe] = useState(null);
+  const [cityResults, setCityResults] = useState(null);
 
   return (
     <GlobalContext.Provider
@@ -18,6 +19,8 @@ export function GlobalProvider({ children }) {
         setWeather,
         recipe,
         setRecipe,
+        cityResults,
+        setCityResults,
       }}
     >
       {children}
