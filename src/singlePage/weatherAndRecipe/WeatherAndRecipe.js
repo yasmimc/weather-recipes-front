@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { useState } from "react/cjs/react.development";
+import { useContext, useState } from "react";
 import GlobalContext from "../../contexts/GlobalContext";
 import useApi from "../../hooks/useApi";
 import Recipe from "./Recipe";
