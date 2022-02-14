@@ -20,4 +20,8 @@ const ButtonStyle = styled.button`
   width: ${({ width }) => (width ? `${width}` : null)};
   height: ${({ height }) => (height ? `${height}` : null)};
   cursor: pointer;
+
+  :hover {
+    background-color: ${palette.color3};
+  }
 `;
