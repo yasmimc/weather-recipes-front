@@ -4,7 +4,7 @@ import { palette } from "../styles/GlobalStyles";
 export default function Header() {
   return (
     <Container>
-      <h1>
+      <h1 onClick={() => window.location.reload()}>
         <Serif>Weather</Serif> <Cursive>Recipes</Cursive>
       </h1>
     </Container>
@@ -20,6 +20,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${palette.color2};
+
+  h1 {
+    cursor: pointer;
+  }
 `;
 
 const Cursive = styled.span`
