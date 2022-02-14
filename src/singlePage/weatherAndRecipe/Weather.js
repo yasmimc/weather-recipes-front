@@ -5,6 +5,8 @@ import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
 import SearchCityAgain from "./SearchCityAgain";
+import { useContext } from "react";
+import GlobalContext from "../../contexts/GlobalContext";
 
 let DefaultIcon = Leaflet.icon({
   ...Leaflet.Icon.Default.prototype.options,
@@ -14,20 +16,27 @@ let DefaultIcon = Leaflet.icon({
 });
 Leaflet.Marker.prototype.options.icon = DefaultIcon;
 
-export default function Weather({ weather, selectedCity }) {
-  const position = [weather.lat, weather.lon];
+export default function Weather({ selectedCity }) {
+  const { weather } = useContext(GlobalContext);
+
   return (
     <HalfContainer>
       <h3>
         {selectedCity} ({weather.current.temp}ºC)
       </h3>
-      <Map center={position} zoom={10} scrollWheelZoom={false}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={position}></Marker>
-      </Map>
+      {weather && (
+        <Map
+          center={[weather.lat, weather.lon]}
+          zoom={10}
+          scrollWheelZoom={true}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[weather.lat, weather.lon]}></Marker>
+        </Map>
+      )}
       <SearchCityAgain />
     </HalfContainer>
   );

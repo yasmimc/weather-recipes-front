@@ -20,3 +20,8 @@ export const CityOption = styled.p`
   margin: 10px 0;
   cursor: pointer;
 `;
+
+export const SearchContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

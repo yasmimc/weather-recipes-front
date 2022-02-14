@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { useState } from "react/cjs/react.development";
-import SpinnerLoader from "../../components/SpinnerLoader";
 import GlobalContext from "../../contexts/GlobalContext";
 import useApi from "../../hooks/useApi";
 import Recipe from "./Recipe";
