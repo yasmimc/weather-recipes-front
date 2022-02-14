@@ -2,6 +2,8 @@
 
 This is a site where you can look for recipes that match the weather!
 
+And it was developed for [Biz Capital](https://bizcapital.com.br/)'s selection process.
+
 <p align="center" >
 <img src="public/assets/weatherRecipes.gif" height="300"/>
 </p>
@@ -13,7 +15,7 @@ Axios</br>
 
 ## Requirements
 
-You must have installed node and npm.
+You must have node and npm installed and run `npm i` to install all necessary dependencies.
 
 ## Available Scripts
 
