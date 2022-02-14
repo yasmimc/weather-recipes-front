@@ -7,6 +7,12 @@ export const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   padding: 0 150px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 10px;
+    padd-top: 10px;
+  }
 `;
 
 export const HalfContainer = styled.div`
@@ -33,6 +39,12 @@ export const HalfContainer = styled.div`
         color: ${palette.color3};
       }
     }
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 0;
+    margin-top: 100px;
   }
 `;
 

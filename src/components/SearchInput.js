@@ -42,4 +42,12 @@ const InputField = styled.input`
     font-style: italic;
     font-size: smaller;
   }
+
+  @media (max-width: 600px) {
+    width: 300px;
+  }
+
+  ::placeholder {
+    font-size: 23px;
+  }
 `;
