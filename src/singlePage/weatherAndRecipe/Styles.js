@@ -1,5 +1,6 @@
 import { MapContainer } from "react-leaflet";
 import styled from "styled-components";
+import { palette } from "../../styles/GlobalStyles";
 
 export const Container = styled.div`
   display: flex;
@@ -27,6 +28,10 @@ export const HalfContainer = styled.div`
 
     svg {
       cursor: pointer;
+
+      :hover {
+        color: ${palette.color3};
+      }
     }
   }
 `;
